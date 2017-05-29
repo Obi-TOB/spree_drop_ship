@@ -8,6 +8,7 @@
   <%== Spree.t(:editing_supplier) + " &ldquo;#{@object.name}&rdquo;".html_safe %>
 <% end %>
 
+<%= render partial: 'spree/admin/shared/supplier_tabs', locals: {current: :details} %>
 <%= render 'spree/shared/error_messages', target: @object %>
 
 <%= form_for [:admin, @object] do |f| %>

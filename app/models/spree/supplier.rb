@@ -21,6 +21,8 @@ class Spree::Supplier < Spree::Base
   has_many   :users, class_name: Spree.user_class.to_s
   has_many   :variants, through: :supplier_variants
 
+  has_many :images, -> { order(:position) }, as: :viewable, dependent: :destroy, class_name: "Spree::SupplierImage"
+
   #==========================================
   # Validations
 

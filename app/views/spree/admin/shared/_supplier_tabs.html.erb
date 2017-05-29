@@ -1,0 +1,7 @@
+<% content_for :sidebar do %>
+  <ul class="nav nav-pills nav-stacked" data-hook="admin_product_tabs">
+   <%= content_tag :li, class: ('active' if current == :images) do %>
+     <%= link_to_with_icon 'picture', Spree.t(:images), spree.admin_supplier_supplier_images_url(@supplier) %>
+    <% end if can?(:admin, Spree::SupplierImage) %>
+ </ul>
+<% end %>
